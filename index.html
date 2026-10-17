@@ -153,6 +153,21 @@
     }
     .orbit.orbit-2 { width: min(88%, 365px); transform: translate(-50%, -50%) rotate(35deg) scaleY(.67); border-color: rgba(228,238,220,.11); }
     .orbit.orbit-3 { width: min(53%, 220px); transform: translate(-50%, -50%) rotate(57deg) scaleY(.76); border-color: rgba(203,255,121,.35); }
+    .orbit { animation: orbit-turn-one 38s linear infinite; }
+    .orbit.orbit-2 { animation: orbit-turn-two 52s linear infinite; }
+    .orbit.orbit-3 { animation: orbit-turn-three 44s linear infinite; }
+    @keyframes orbit-turn-one {
+      from { transform: translate(-50%, -50%) rotate(-22deg); }
+      to { transform: translate(-50%, -50%) rotate(338deg); }
+    }
+    @keyframes orbit-turn-two {
+      from { transform: translate(-50%, -50%) rotate(35deg) scaleY(.67); }
+      to { transform: translate(-50%, -50%) rotate(395deg) scaleY(.67); }
+    }
+    @keyframes orbit-turn-three {
+      from { transform: translate(-50%, -50%) rotate(57deg) scaleY(.76); }
+      to { transform: translate(-50%, -50%) rotate(417deg) scaleY(.76); }
+    }
     .orbit::after {
       content: ""; position: absolute; left: 17%; top: 13%; width: 9px; height: 9px;
       border-radius: 50%; background: var(--accent); box-shadow: 0 0 24px rgba(203,255,121,.7);
@@ -278,6 +293,19 @@
       .work-intro { margin-top: 22px; max-width: 520px; }
       .principle { padding: 18px; }
       .principle h3 { margin-top: 23px; }
+    }
+    @media (min-width: 601px) and (max-width: 760px) {
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        display: none; position: absolute; top: calc(100% + 8px); left: 24px; right: 24px;
+        padding: 12px; flex-direction: column; align-items: stretch; gap: 4px;
+        background: rgba(19,21,21,.97); border: 1px solid var(--line-strong); border-radius: 18px;
+        box-shadow: 0 20px 60px rgba(0,0,0,.4);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { display: block; padding: 12px 13px; border-radius: 10px; }
+      .nav-links a:hover { background: rgba(255,255,255,.045); }
+      .nav-links .nav-contact { border: 0; }
     }
     @media (max-width: 600px) {
       .wrap { width: min(var(--max), calc(100% - 32px)); }
@@ -425,7 +453,7 @@
             <div class="section-kicker">02 / Vybraná práce</div>
             <h2 id="work-title">Věci, které jsem navrhl, postavil nebo právě rozvíjím.</h2>
           </div>
-          <p class="work-intro">Výběr vlastních digitálních projektů. Bez fiktivních referencí a maket vydávaných za hotové zakázky.</p>
+          <p class="work-intro">Výběr digitálních projektů a prototypů, na kterých zkouším propojení designu s funkční implementací.</p>
         </div>
 
         <div class="project-grid">
